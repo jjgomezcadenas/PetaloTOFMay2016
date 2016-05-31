@@ -310,11 +310,11 @@ In both configurations, the uninstrumented faces reflect optical photons accordi
 %	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
 %\end{figure}  
 
-  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas fly a distance $dg_1, dg_2$~before interacting in the LXSCs. Scintillation photons are produced according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM} .
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM} .
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
    If the SiPM is coated with TPB, the 
   VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. Depending on the PDE of the SiPM the incident photon may result in a photoelectron.
-We denote $d_g$ as the distance from the emission to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor). If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
+We denote $d_g$ as the distance from the centre of the LOR to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor). If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
 %
 \begin{equation}
 t_1 - t_2 = 2\frac{d_d}{c} + \frac{\Delta d_g}{c} + \frac{ \Delta d_p}{v_p}
@@ -356,7 +356,7 @@ We start our study by assuming that the refraction indices in both media are con
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.36]{img/FirstPEScintLXeLYSO.png}
+	\includegraphics[scale=0.4]{img/FirstPEScintLXeLYSO.png}
 	\caption{\label{fig.firstPE} Arrival time of the first recorded photon in LXe (blue line) and LYSO (green dotted), after subtracting the time of flight of the incident gamma ($d_g/c$) and the time of flight of the scintillation photons ($n \cdot d_p/c$). The presence of negative bins is due to the the sum of two effects: on one hand, the time registered by sensors is binned with a size of 5 ps, while the time of flight of incident gammas is taken with the precision provided by the Monte Carlo (sub picosecond). On the other hand, the time of flight of the scintillating photon is determined by the position of the SiPM which detects it. Since SiPMs have an area of 3 $\times$ 3 $\textrm{mm}^2$, the error associated is of the order of $\sim$ 1.5 mm, which translates to $\sim$ 5 ps for velocities similar to the one of light.}\label{fig.FirstPE}
 \end{figure} 
 
