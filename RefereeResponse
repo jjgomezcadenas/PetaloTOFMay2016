@@ -1,0 +1,69 @@
+Dear editor and referee,
+
+we thank you for the careful reading of the manuscript and the insights you provided us. We have modified the manuscript according to your suggestions and comments, which we address in more detail in the following.
+
+Referee report
+
+We have added the references suggested.
+We have addressed the topic of two or more interactions in section 2, second point of "Physical properties of liquid xenon relevant for PET".
+Minor suggestions:
+1) We have changed the title to "Investigation of the Coincidence Resolving Time performance of a PET scanner based on liquid xenon: A Monte Carlo study".
+2) We have mentioned the photofraction in xenon in the following sentence at the beginning of the section "Scintillation in LXe": "When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric, which happens in ~ 20 % of the events, or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium."
+
+Editor report
+
+Basic assumptions:
+
+1. We use the term "spatial resolution" to indicate the precision in the determination of one point position, rather than the ability to distinguish two differet points, which is more difficult to quantify. We have added a line to clarify it in the text. We agree with the concerns of the editor about passing from rms to FWHM, so we decided not to mention the digital resolution. At pag. 10, in the section named "Intrinsic CRT: effect of the DOI resolution" we have also changed the estimation of the DOI resolution of a conventional LYSO crystal to the digital one, without multiplying by the factor 2.35.
+
+2. The values of xy and DOI resolution are not assumptions, it comes from our simulations, which are described in detail in the Master dissertation of J.M Benlloch-Rodríguez, one of the authors of the paper. We have changed the reference from the proceedings Spectrochimica Acta, vol. 118, pp 613, Apr. 2016 to the reference to the Master dissertation, which is available on-line.
+
+3. We have added the reference to the value 60 ph/keV. In the paper we reference to, this value is well justified.
+
+4. For our simulations we have used the Geant4 simulation toolkit (Ref.[17]), in which optical photons produced in scintillation are propagated with a group velocity defined as
+
+v_g = c/(n(E)+dn/d(log(E))
+
+where n is the refraction index of the medium and E is the energy of the optical photon. The dependence of n with the energy of photons is also implemented in our simulation, following A. Baldini et al., "Liquid Xe scintillation calorimetry and Xe optical properties", arXiv:physics/0401072v1 [physics.ins-det].
+
+5. We have added several references to parameters and characteristics of the simulation along the paper. We have also described the details of the simulation at the beginning of section 4.
+
+
+Specific comments:
+
+1. We have changed CRT to the complete name in the title.
+2. We have added the reference.
+3. We have added the reference to the value 60 ph/keV.
+4. We have changed density and temperature to precise values, also quoting references. The attenuation length we refer to is not to x-rays, but to scintillation optical photons: we have rephrased as "light attenuation length" to make it clearer and we have also added a value for the 511-keV gamma attenuation length.
+5. We have rephrased to "Therefore, the design of a compact system is much simpler than in the case of solid detectors of fixed shape."
+6. In principle, it should be possible to identify events with two separate interactions, with scintillation light only. Once an event in the region of interest (around 511 keV of total deposited energy) is selected, the pattern of recorded light on SiPMs can show one or more peaks. Reconstruction algorithms, such as a centre-of-gravity algorithm using only the SiPMs around each peak, or neural network give the position. We have added a sentence to explain that.
+7. We have rephrased to "The temperature at which xenon can be liquefied at a pressure very close to the atmospheric} is high enough as to be reached using a basic cryostat. Also, at this temperature SiPMs can be operated normally, and their DCR is reduced by a factor $\sim 2^{13}$, thus making it essentially negligible "
+8. We have moved the reference where suggested by the editor.
+9. We have changed ~ 15 ns to = 15 ns. This is the value used to produce Fig. 2.
+10. We have changed "instead" for "On the other hand". We wanted to highlight the difference in the parametrization of the two terms I^R_1 and I^R_2.
+11. We think that showing the whole range in the x and y axes diverts the attention of the reader from the relevant message which is the goodness of the fit in the first nanoseconds. We have added the following sentence in the caption, to explain this:  "Although the distribution extends up to several hundreds of nanoseconds, only the first 10 ns are shown, which is the range used for the fit. In the simulation studies presented in this work, only the first nanoseconds are relevant, since the CRT is determined by the arrival time of first few photoelectrons."
+12. We have amended the caption according to the suggestions.
+13. We have added the following sentence to explain why: "This parametrization is the one used in the simulation studies throughout this paper, since the geant4 simulation toolkit on which our simulation is based can model the production of scintillation photons as a single or double exponential."
+14. We have replaced the figure, adding the axes and we've added in the caption the emission direction of gammas.
+15. We have added the reference to the Master's thesis dissertation where these numbers are justified.
+16. and 17. We decided not to mention 1/sqrt(12). We just report the results obtained in the master dissertation, which has been referenced. We have rephrased the whole sentence to make clear that the weighting we refer to is a centre-of-gravity algorithm.
+18. We have added the reference to the conventional SiPM PDE and removed Fig. 4.
+19. and 20. We have removed the figure and the sentence referring to 1-2 ns.
+21. We have added the following sentences to describe the system: "In both configurations, the uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 %. Rayleigh scattering is simulated, with an attenuation length of 36 cm."
+22. SiPMs are covered typically with a passivation layer, which has a refraction index around 1.4-1.5 and doesn't vary much in the range of wavelength under consideration (see, for instance, http://refractiveindex.info, for SiO2: it stays between 1.45 and 1.5 up to 1 micron). We have added the following sentence to explain that: "SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO2 and it’s around 1.4 –1.5". In our simulation we have used 1.54, which is the value of a specific SiPM from SensL, which we are familiar with, and we have added a reference for that.
+23. We have eliminated the sentence referring to specific values of refraction indices, since we explain later in the text the assumptions we make on these. We have also added a reference when we choose a specific value for LYSO in our simulation.
+24. We have splitted Eq 4.1 in two equations, to make the flow clearer. We have added some text to explain each term of the equation. 
+25. Since the refraction index is almost flat in the blue region, we believe that it is more interesting to show the VUV part. If we show wavelengths up to ~ 600 nm (the range of emission of TPB), the variation of the VUV part is difficult to appreciate. We have added the sentence "For wavelengths in the emission range of TPB (~  400-600 nm) the refraction index is practically flat, and has a value of 1.4". We have also added the reference used to parametrize the refraction index in the simulation.
+26. We have changed the footnote to "expressed in FWHM unless explicitly stated otherwise".
+27. The configuration used throughout all the simulations is the one described at the beginning of section 4. To make it clearer, we have added the following sentence at the beginning of the section: "All the simulations described in this paper use this set-up."
+We have amended the caption changing Delta_d to d and Delta_p to p, because what is subtracted is indeed the distance covered by the single gamma and the time of flight of the single scintillation photon. We hace also added the following sentence to the caption, to explain negative bins: "The presence of negative bins is due to the the sum of two effects: on one hand, the time registered by sensors is binned with a size of 5 ps, while the time of flight of incident gammas is taken with the precision provided by the Monte Carlo (sub picosecond). On the other hand, the time of flight of the scintillating photon is determined by the position of the SiPM which detects it. Since SiPMs have an area of 3 x 3 mm^2, the error associated is of the order of ~ 1.5 mm, which translates to ~ 5 ps for velocities similar to the one of light."
+We have also changed "Arrival time of the first photoelectron" to "Arrival time of the first recorded photon".
+
+28. In our simulation an event is the signal in the SiPM produced by a pair of back-to-back gammas interacting in both boxes. For each event, we plot the registered time of the first photoelectron in one of the two boxes. The whole plot is then normalized dividing by the number of events. We have realized that the normalization was not correct, so we have redone the plots, so that the integral is 1.
+29. The reason why the spread in the velocity is higher than a factor 2 is because the plotted velocity is the group velocity, which is given by:
+
+v_g = c/(n(E)+dn/d(log(E))
+
+We have expanded the caption to "Distribution of the velocity of scintillation photons propagating in LXe, given the refraction index shown in figure 6 and the emission spectrum shown in figure 1."
+
+

@@ -10,7 +10,7 @@
 \input{Commands}
 
 %%% First page %%%
-\title{Investigation of the Coincidence Resolving Time performance of a PET scanner based in liquid xenon: A Monte Carlo study}
+\title{Investigation of the Coincidence Resolving Time performance of a PET scanner based on liquid xenon: A Monte Carlo study}
 \author[a]{J.J.~Gomez-Cadenas,}
 \author[a]{J.M.~Benlloch-Rodr\'iguez,}
 \author[a,1]{P.~Ferrario,}\note{Corresponding author.}
@@ -64,7 +64,7 @@ VEREOS \cite{vereos} (both of them manufactured by Philips) reach CRT values of 
 
 Recent research, using small setups, has found even better results. For example Ferri et al. \cite{LysoFBK} report measurements using a pair of small LYSO crystals 
 ($3 \times 3 \times 5 {\rm\ mm^3}$ )  read out by high-fill factor SiPMs. With this setup, a CRT of $157\pm 5$ ps was found at ambient temperature ($20\,^{\circ}{\rm C}$). The CRT was considerably improved working at $-20\,^{\circ}{\rm C}$, to a value of
- $125\pm 5$ ps. The limiting factor of the CRT at ambient temperature was the impact of the dark current rate (DCR).
+ $125\pm 5$ ps. The limiting factor of the CRT at ambient temperature was the impact of the dark current rate (DCR). Gundacker and co-workers have found a CRT of $85 \pm 4 $ ps for very small crystals of $2 \times 2 \times 3 {\rm\ mm^3}$  \cite{LysoCRT}.
 
 In this paper we present a Monte Carlo investigation of the CRT performance of a recently proposed new type of
 PET scanner, called PETALO (Positron Electron TOF Apparatus using Liquid xenOn). 
@@ -89,12 +89,12 @@ PET scanner, called PETALO (Positron Electron TOF Apparatus using Liquid xenOn).
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.6]{img/ScintillationSpectrumLXe.pdf}
-	\caption{\label{fig.spectrumLXe} Emission spectrum of scintillation photons in LXe, simulated as a gaussian distribution with mean 178 nm and FWHM 14 nm, accordingly to Ref. \cite{EmissionLXe}.}
+	\caption{\label{fig.spectrumLXe} Emission spectrum of scintillation photons in LXe, simulated as a gaussian distribution with mean 178 nm and FWHM 14 nm \cite{EmissionLXe}.}
 \end{figure}
 
 Xenon is a noble gas. It responds to the interaction of ionizing radiation producing about 60 photons per keV of deposited energy \cite{Chepel:2012sj}. The emitted photons have wavelengths in the ultraviolet range 
 (figure \ref{fig.spectrumLXe}) with an average wavelength of 178 nm. The scintillation signal is fast 
-(see section \ref{sec.scint}) and can thus result in an excellent CRT.  In its liquid phase (the triple point of xenon is reached at a temperature of 161.35 K and a pressure of 0.816 bar \cite{TempLXe}) LXe has a reasonable high density (2.98 g/cm$^3$)  \cite{DensityLXe}, which gives an attenuation length of 3.7 cm for 511-keV gammas \cite{AttLengthLXe}  and an acceptable light attenuation length (36.4 cm) \cite{RayleighLXe}, which makes it suitable for PET applications. Its main attractive features are:
+(see section \ref{sec.scint}) and can thus result in an excellent CRT.  In its liquid phase (the triple point of xenon is reached at a temperature of 161.35 K and a pressure of 0.816 bar \cite{TempLXe}) xenon has a reasonable high density (2.98 g/cm$^3$)  \cite{DensityLXe}, which gives an attenuation length of 3.7 cm for 511-keV gammas \cite{AttLengthLXe}  and an acceptable light attenuation length (36.4 cm) \cite{RayleighLXe}, which makes it suitable for PET applications. Its main attractive features are:
 
 \begin{enumerate}
 \item {\bf A high scintillation yield ($\sim$ 30\,000 photons per 511 keV gamma)}, twice as large as that of LYSO. 
@@ -106,7 +106,7 @@ Once an event in the region of interest (around 511 keV of total deposited energ
 
 \subsection*{Scintillation in LXe} \label{sec.scint}
 
-When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium. Most of the scintillation light in xenon is emitted by diatomic excited molecules which are formed through two distinct processes:
+When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric, which happens in $\sim$ 20 \% of the events, or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium. Most of the scintillation light in xenon is emitted by diatomic excited molecules which are formed through two distinct processes:
 \begin{enumerate}
 \item Excitation of atoms by electron impact with subsequent formation of strongly bound diatomic molecules in the excited state (excitons). We refer to this process as scintillation due to exciton self-trapping or SE.
 \item Recombination of the ionization electrons with positive ions. We call this process scintillation due to recombination or SR. 
@@ -156,7 +156,7 @@ I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
 	\centering
 	\includegraphics[scale=0.6]{img/Fit10ns_ROOT.pdf}
 %	\includegraphics[width=.5\textwidth]{../img/TOFPET.jpg}
-	\caption{\label{fig.scint} Intensity of scintillation in LXe as a function of time. Blue dots are obtained from Eqs.~\ref{eq.tot} to \ref{eq.4}, using time constants and intensities from Ref.~\cite{Kubota79}. The red line is the same data fitted with the function in Eq.~\ref{eq.scint}. Although the distribution extends up to several hundreds of nanoseconds, only the first 10 ns are shown, which is the range used for the fit. In the simulation studies presented in this work, only the first nanoseconds are relevant, since the CRT is determined by the arrival time of first few photoelectrons.}
+	\caption{\label{fig.scint} Intensity of scintillation in LXe as a function of time. Blue dots are obtained from equations \ref{eq.tot} to \ref{eq.4}, using time constants and intensities from reference \cite{Kubota79}. The red line is the same data fitted with the function in equation \ref{eq.scint}. Although the distribution extends up to several hundreds of nanoseconds, only the first 10 ns are shown, which is the range used for the fit. In the simulation studies presented in this work, only the first nanoseconds are relevant, since the CRT is determined by the arrival time of first few photoelectrons.}
 \end{figure}
 
 Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30\,000$ VUV photons), adding the contribution of SE and SR processes (blue dots). This distribution is well described in terms of the sum of two exponential distributions with decay constants $\tau_1$ and $\tau_2$. The fit, shown in figure \ref{fig.scint}, gives the following distribution for the number of photons: 
@@ -216,7 +216,7 @@ Equation \ref{eq.scint} fits better in the short range, which is the most releva
 \end{figure}
 
 %The first idea of using a LXe time projection chamber for PET was proposed in 1993 by Chepel \cite{chepelFirst}. 
-The possibility of building a LXe PET based on the excellent properties of LXe as scintillator was first suggested by Lavoie in 1976 \cite{lavoie}, and the study of this type of PET was carried out by the Waseda group \cite{Doke1,Nishikido2,Nishikido1}. The Waseda prototype was based in LXe cells read out by VUV-sensitive PMTs which covered 5 of the 6 sides of the cell.
+The possibility of building a LXe PET based on the excellent properties of LXe as scintillator was first suggested by Lavoie in 1976 \cite{lavoie}, and the study of this type of PET was carried out by the Waseda group \cite{Doke1,Nishikido2,Nishikido1}. The Waseda prototype was based in LXe cells read out by VUV-sensitive PMTs which covered 5 of the 6 sides of the cell. In 1993, Chepel proposed to read both scintillation and ionization charge in a LXe Time Projection Chamber \cite{chepelFirst} and an extensive work has been done since then by him and co-workers \cite{chepelLXe, chepelRes, chepelEnergyRes}.
 
 PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner which exploits the copious scintillation of liquid xenon and the availability of state-of-the-art SiPMs and fast electronics designed to maximize TOF performance \cite{Petalo2015}. The detector building block is the liquid xenon scintillating cell (LXSC). The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon (figure \ref{fig.box}). They are read out by ASICs optimized for excellent timing resolution. PETALO is a compact, homogenous and highly efficient detector which shares many of the desirable properties of monolithic crystals, with the added advantage of high yield and fast scintillation offered by liquid xenon, low noise due to cryogenic operations which virtually eliminates the SiPMs DCR, and the potential of low cost. 
 
@@ -310,7 +310,7 @@ In both configurations, the uninstrumented faces reflect optical photons accordi
 %	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
 %\end{figure}  
 
-  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM} .
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM}.
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
    If the SiPM is coated with TPB, the 
   VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. Depending on the PDE of the SiPM the incident photon may result in a photoelectron.
@@ -322,7 +322,7 @@ t_1 - t_2 = 2\frac{d_d}{c} + \frac{\Delta d_g}{c} + \frac{ \Delta d_p}{v_p}
 where $v_p$ is the velocity of the scintillating photon. Therefore, the difference in time between the gamma emission vertex and the centre of the LOR can be expressed as:
 %
 \begin{equation}
-\Delta t  \equiv \frac{d_d}{c}  =  \frac{1}{2}(t_2 - t_1 - \frac{\Delta d_g}{c} - \frac{\Delta d_p}{v_p}) 
+\Delta t  \equiv \frac{d_d}{c}  =  \frac{1}{2}(t_1 - t_2 - \frac{\Delta d_g}{c} - \frac{\Delta d_p}{v_p}) 
 \label{eq.CRT}
 \end{equation}
 %
@@ -341,7 +341,7 @@ $\delta \Delta t$, is defined as the variance\footnote{expressed in FWHM unless 
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.6]{img/LXe_n_lambda.pdf}
-	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon, as results from the parametrization in Ref.~\cite{Baldini:2004td}. For wavelengths in the emission range of TPB ($\sim$ 400-600 nm) the refraction index is practically flat, and has a value of 1.4.}
+	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon, as results from the parametrization in Ref.~\cite{Baldini:2004td}. For wavelengths in the emission range of TPB ($\sim$ 400--600 nm) the refraction index is practically flat, and has a value of 1.4.}
 \end{figure}
 
 
@@ -375,7 +375,7 @@ $.
 %
 For LXe, with n = 1.7, $\delta \Delta t = 11.2$~ps, while for  LYSO, with n = 1.8, $\delta \Delta t = 11.9$~ps in both cases for a DOI resolution $\Delta z = 2$~mm. Notice, on the other hand, that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in reference \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of 
 $20 \times 20 \times 12 ~{\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm
-thick, would have a DOI resolution given by the digital resolution, which is determined by the pitch $20{\textrm{ mm}}/\sqrt{12}$ = 13.3 mm, resulting in a $\delta \Delta t = 34$~ps.
+thick, would have a DOI resolution given by the digital resolution, which is determined by the pitch, $20{\textrm{ mm}}/\sqrt{12}$ = 13.3 mm, resulting in a $\delta \Delta t = 34$~ps.
 
 \begin{figure}[!bhtp]
 	\centering
