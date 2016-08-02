@@ -100,7 +100,7 @@ Xenon is a noble gas. It responds to the interaction of ionizing radiation produ
 \item {\bf A high scintillation yield ($\sim$ 30\,000 photons per 511 keV gamma)}, twice as large as that of LYSO. 
 \item {\bf LXe is a continuous medium with uniform response}. Therefore, the design of a compact system is much simpler than in the case of solid detectors of fixed shape. It is also possible to provide a 3D measurement of the interaction point, and, thus, a high resolution measurement of the depth of interaction (DOI). Furthermore, in LXe it is possible to identify Compton events depositing all their energy in the detector as separate-site interaction, due to its relatively large interaction length.  
 Once an event in the region of interest (around 511 keV of total deposited energy) is identified, the pattern of recorded light on SiPMs can in principle be inspected to find one or more depositions, using, for instance, neural networks \cite{tfm}.This increases the sensitivity of the system, since those events can, in principle, be used for image reconstruction. 
-\item {\bf The temperature at which xenon can be liquefied at a pressure very close to the atmospheric} is high enough as to be reached using a basic cryostat. Also, at this temperature SiPMs can be operated normally, and their DCR is reduced by a factor $\sim 2^{13}$, thus making it essentially negligible. 
+\item {\bf The temperature at which xenon can be liquefied at a pressure very close to the atmospheric} is high enough as to be reached using a basic cryostat. Also, at this temperature SiPMs can be operated normally, and their DCR is essentially negligible (see, for instance figure 17 in reference \cite{dcr}). 
 \item {\bf The cost} of LXe is 3 \$/cc to be compared with $\sim$ 40--50 \$/cc in the case of LYSO. 
  \end{enumerate}
 
@@ -112,7 +112,7 @@ When a 511 keV gamma interacts in liquid xenon it will produce a secondary elect
 \item Recombination of the ionization electrons with positive ions. We call this process scintillation due to recombination or SR. 
 \end{enumerate}
 
-Both processes are very fast (of the order of the ps) and therefore scintillation in LXe does not have a physical rise constant. The two decay constants are related with the decay of the two lowest excited molecular states 
+Both processes are very fast and therefore scintillation in LXe does not have a physical rise constant. The two decay constants are related with the decay of the two lowest excited molecular states 
 (${}^1{\Sigma_u^+},{}^3{\Sigma_u^+}$). The decay of the singlet state 
 (${}^1{\Sigma_u^+}$) occurs with a lifetime $\tau_1 =2.2$ ns, while the lifetime of the triplet state (${}^3{\Sigma_u^+}$) is $\tau_2 =27$ ns \cite{Kubota79}.
 
@@ -262,10 +262,12 @@ The spatial resolution in the (x,y) coordinates (transverse to the gammas line o
 %
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.9]{img/TPBSpectrum.png}
-	\caption{Visible re-emission spectrum for a TPB film illuminated with 
-	128, 160, 175, and 250 nm light. All spectra are normalized to unit area.
-	Figure from reference \cite{Gehman:2011xm}.  }\label{fig.tpb} 
+	\includegraphics[scale=0.5]{img/TPBEmissionSpectrum.pdf}
+	\caption{Visible re-emission spectrum of TPB, simulated according to measurements from reference \cite{Gehman:2011xm}.}
+%	\caption{Visible re-emission spectrum of TPB film illuminated with 
+%	128, 160, 175, and 250 nm light. All spectra are normalized to unit area.
+%	Figure from reference \cite{Gehman:2011xm}.  }
+\label{fig.tpb} 
 \end{figure}
 
 
@@ -318,10 +320,11 @@ In both configurations, the uninstrumented faces reflect optical photons accordi
 %	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
 %\end{figure}  
 
-  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs. If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM}.
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs and, depending on the PDE of the SiPM, may result in a photoelectron.
+  %If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM}.
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
-   If the SiPM is coated with TPB, the 
-  VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. Depending on the PDE of the SiPM the incident photon may result in a photoelectron.
+ %  If the SiPM is coated with TPB, the VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. 
+ 
 We denote $d_g$ as the distance from the centre of the LOR to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor). If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
 %
 \begin{equation}
