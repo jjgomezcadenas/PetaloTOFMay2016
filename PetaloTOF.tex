@@ -31,7 +31,7 @@ Camino de Vera, s/n, Edificio 8B, 46022 Valencia, Spain}
 
 %PETALO (Positron Electron TOF Apparatus using Liquid xenOn) is a proposed new type of PET scanner using liquid xenon. The detector building block is the liquid xenon scintillating cell. The cell shape and dimensions can be optimised depending on the intended application. In particular, the LXSC2 instruments the entry and exit faces of the box (relative to the gammas line of flight) with silicon photomultipliers, while all the other faces are covered with a reflecting material such as Teflon. The SiPMs can be VUV sensitive or, alternatively, be coated with a wavelength shifter such as tetraphenyl butadiene. The good energy and position resolution of the LXSC2 coupled with the relatively low cost of xenon (a factor 7-8 less than LYSO per unit of detection) makes PETALO suitable for the construction of a large scanner of high sensitivity.   
 
-In this paper we present a Monte Carlo investigation of the CRT performance of a PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 70 ps (depending on the PDE of the sensor) can be obtained if the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 155 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
+In this paper we present a Monte Carlo investigation of the CRT performance of a PET scanner exploiting the scintillating properties of liquid xenon. We find that an excellent CRT of 70 ps (depending on the PDE of the sensor) can be obtained if the scanner is instrumented with silicon photomultipliers (SiPMs) sensitive to the ultraviolet light emitted by xenon. Alternatively, a CRT of 160 ps can be obtained instrumenting the scanner with (much cheaper) blue-sensitive SiPMs coated with a suitable wavelength shifter.
 These results show the excellent time of flight capabilities of a PET device based in liquid xenon.   
 }
 
@@ -295,8 +295,7 @@ and re-emitted isotropically \cite{Gehman:2011xm}. The decay constant of TPB has
 
 To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version geant4.10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
 $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
-(figure \ref{fig.psetup}) and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The  LYSO setup replaces the two LXe cells by a pair of  monolithic LYSO crystals of identical dimensions, also read out by SiPMs.
-In both configurations, the uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm.
+(figure \ref{fig.psetup}) and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm.
 
  \begin{figure}[!bthp]
 	\centering
@@ -319,7 +318,7 @@ In both configurations, the uninstrumented faces reflect optical photons accordi
 %	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
 %\end{figure}  
 
-  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint} for LXe (in the case of LYSO they are produced according to a single decay constant of 40 ns) and propagated through the material. The photons reach eventually the SiPMs and, depending on the PDE of the SiPM, may result in a photoelectron.
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint}  and propagated through the material. The photons reach eventually the SiPMs and, depending on the PDE of the SiPM, may result in a photoelectron.
   %If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM}.
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
  %  If the SiPM is coated with TPB, the VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. 
@@ -357,7 +356,7 @@ $\delta \Delta t$, is defined as the variance\footnote{expressed in FWHM unless 
 
 
 Notice that, while the calculation of the term $\Delta d_g/c$~is immediate, finding the value
-of $\Delta d_p/v_p$ requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons, see figure \ref{fig.nlambda}) and the interaction vertices of the gammas in the LXSCs, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effects that affect the CRT are the existence of a rise constant for scintillation (absent in the case of LXe, but of the order of 90 ps for LYSO \cite{Seifert}), and the additional decay constant (about 2.2 ns) introduced if the SiPMs of the LXSC2 are coated with TPB. 
+of $\Delta d_p/v_p$ requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons, see figure \ref{fig.nlambda}) and the interaction vertices of the gammas in the LXSCs, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effect that affect the CRT is the additional decay constant (about 2.2 ns) introduced if the SiPMs of the LXSC2 are coated with TPB. 
 
 In the remaining of this section we study systematically the various factors contributing to the CRT in LXe. 
 
@@ -376,7 +375,7 @@ Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron, afte
 Notice that $d_p$~is the difference 
 between the position of the interaction vertex and the position of the SiPM which records the photoelectron. 
 The plot is computed introducing a resolution of 4.7 mm FWHM both in the transverse coordinates and
-in the DOI (which corresponds to the resolution expected in the LXSC2). The jitter introduced by the DOI correction is
+in the DOI (which is a conservative approach since a slightly better resolution is expected in the LXSC2). The jitter introduced by the DOI correction is
 $
 %\begin{equation}
 \delta \Delta t =\Delta z \times n \times 3.3\ \textrm{ps/mm}
@@ -461,7 +460,7 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
 %	\caption{\label{fig.crt_avg_LYSO} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LYSO. The CRT is shown for several values of the PDE.}
 %\end{figure}
 
-Figure \ref{fig.crt2} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is $\sim$ 100 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
+Figure \ref{fig.crt2} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is $\sim$ 110 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
 CRT of 70 ps.
 
 %Interestingly, the results obtained for LYSO using the first photoelectron to compute $\Delta t$ (a CRT of 125 ps for a PDE of 50\%), agree rather well with the results of Ferri et al  \cite{LysoFBK} {\em when the LYSO crystals were cooled to $-20\,^{\circ}{\rm C}$}, e.g, reducing the DCR by a factor 16). The obvious advantage of LXe is the cryogenic operation, at $\sim -100\,^{\circ}{\rm C}$, which essentially eliminates the effect of the DCR. Thus, an excellent CRT of 70 ps could be achieved if the SiPM--VUV technology is capable of producing sensors with a PDE of 20\%. For a PDE of 15\% corresponding to the best existing devices, the CRT averaging over several photoelectrons is 80 ps, still very good.
@@ -499,6 +498,12 @@ CRT of 70 ps.
 	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
 \end{figure}
 
+\begin{figure}[!bhtp]
+	\centering
+	\includegraphics[scale=0.4]{img/tpb_avg_npe_phys.png}
+	\caption{\label{fig.crtTPBavg} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe with TPB. The blue line is computed for a TPB decay time of 2.2 ns, while the green dotted line is for 3.0 ns.}
+\end{figure}
+
 %\begin{figure}[!bhtp]
 %	\centering
 %	\includegraphics[scale=0.4]{../img/PetaloTOF/tpb_noCher_1d0ns_avg_npe_phys.png}
@@ -525,11 +530,11 @@ Figure \ref{fig.crtTPB} shows the CRT as a function of the
  The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength, but not the jitter due to the SiPM and electronics. 
  Here we must compare the CRT achieved for VUV sensitive SiPMs with a PDE of 15--20\% ($\sim$ 50 ps) with the CRT achieved for blue sensitive SiPMs coated with TPB, taking as a reference a PDE of 50\% (this corresponds to the
  PDE for blue light,  however, the CRT is computed taking into account the effect of the TPB absorption and subsequent re-emission).  The CRT in this case varies from 180 ps (for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns) to 
- 200 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns).  When the effect of the jitter of the SiPM and front-end electronics is added (figure \ref{fig.crtTPBjit}), the CRT (first photoelectron) for VUV-SiPMs is $\sim 100$~ps, while the CRT for TPB-coated SiPMs varies from  200 ps (for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns) to  220 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns). Averaging $\Delta t$ over the first 10 photoelectrons  the CRT is reduced to 155 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns  and 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns. Notice that averaging over several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
+ 200 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns).  When the effect of the jitter of the SiPM and front-end electronics is added (figure \ref{fig.crtTPBjit}), the CRT (first photoelectron) for VUV-SiPMs is $\sim 110$~ps, while the CRT for TPB-coated SiPMs varies from  200 ps (for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns) to  220 ps (for a decay constant $\tau_{\rm{TPB}} = 3$~ns). Averaging $\Delta t$ over the first 10 photoelectrons  the CRT is reduced to 160 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns  and 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns (figure \ref{fig.crtTPBavg}). Notice that averaging over several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
  
  %Averaging $\Delta t$ over the first 10 photoelectrons  the CRT is reduced to 130 ps for a decay constant $\tau_{\rm{TPB}} = 1$~ns (figure \ref{fig.crtTPB1ns});  155 ps for a decay constant $\tau_{\rm{TPB}} = 2.2$~ns (figure \ref{fig.crtTPB2ns});  and 170 ps for a decay constant $\tau_{\rm{TPB}} = 3$~ns (figure \ref{fig.crtTPB3ns}). Notice that averaging over several photoelectrons reduces the error in the CRT by a large factor in the case of SiPMs coated with TPB. 
  
- The results obtained with TPB are still very good. The best case scenario corresponds to a decay time of 2.2 ns and yields a CRT of 155 ps.
+ The results obtained with TPB are still very good. The best case scenario corresponds to a decay time of 2.2 ns and yields a CRT of 160 ps.
  %, comparable to the value obtained by Ferri et al  \cite{LysoFBK}  when the LYSO crystals were cooled to $-20\,^{\circ}{\rm C}$.
     
 %  \subsection*{Including the effect of the overall syncronization}
@@ -547,7 +552,7 @@ Figure \ref{fig.crtTPB} shows the CRT as a function of the
 We have studied the CRT that can be obtained by a PETALO scanner based in the LXSC2 cell. The intrinsic resolution of the cell (corresponding to an ideal VUV sensitive sensor of PDE one and forcing a fixed refraction index) is $\sim$ 11 ps, totally dominated by the DOI uncertainty. Introducing a PDE of 20\%, corresponding to the best one currently achieved by VUV-sensitive SiPMs, still results in an excellent CRT of  30 ps. Including the effect of the variable refraction index and Fresnel reflections, a CRT of 50 ps is found for a PDE of 20\%. Adding the effect of the jitter of the SiPM and electronics spoils the CRT to some 110 ps for the same PDE. Averaging $\Delta t$~over the first few photoelectrons, one recovers a CRT of 70 ps. It follows that a PETALO scanner based in the LXSC2 cell equipped with VUV sensitive SiPMs of relatively large PDE (20\%) could reduce the CRT of a large system well below the 100 ps threshold, improving by a factor $\sim$ 4 the CRT of the best existing PET-TOF commercial system. 
 
 On the other hand, we find that using blue sensitive SiPMs coated with TPB results in a CRT that could be as good as
-155 ps (for $\tau_{\rm{TPB}} = 2.2$~ns). 
+160 ps (for $\tau_{\rm{TPB}} = 2.2$~ns). 
 %These values still compete with the best results obtained for LYSO and would be, at least, a factor 2 better than those obtained with the VEREOS, at, arguably, much lower cost (the VEREOS uses LYSO crystals, and digital SiPMs, to be compared with much cheaper LXe and conventional, large-area SiPMs in the case of PETALO). 
  In summary, it appears feasible to build a PETALO scanner with existing technology, combining the advantages of large sensitivity, good energy and spatial resolution, and excellent CRT.  
 
