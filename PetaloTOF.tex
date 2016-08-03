@@ -238,7 +238,7 @@ overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that
 
 %% Referee's concern about the digital resolution
 %The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be $p/\sqrt{12}$, where $p$ is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM. 
-The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs. Weighting with the SiPM amplitude using a centre-of-gravity algorithm, gives a resolution of about 2 mm FWHM \cite{tfm}. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM \cite{tfm}. 
+The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM can be obtained for a box of $5\times5\times5$ cm \cite{tfm}, in this study we have a smaller pitch (there is no space between SiPMs), so a slightly better (x,y) resolution could be expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 3 mm FWHM \cite{tfm}. These resolutions include the full detector volume, there is no fiducial cut.
 
 \subsection{VUV-sensitive SiPMs versus SiPMs coated with TPB}
 
@@ -366,8 +366,9 @@ We start our study by assuming that the refraction index of LXe is constant, wit
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/FirstPEScintLXeLYSO.png}
-	\caption{\label{fig.firstPE} Arrival time of the first recorded photon in LXe (blue line) and LYSO (green dotted), after subtracting the time of flight of the incident gamma ($d_g/c$) and the time of flight of the scintillation photons ($n \cdot d_p/c$). The presence of negative bins is due to the the sum of two effects: on one hand, the time registered by sensors is binned with a size of 5 ps, while the time of flight of incident gammas is taken with the precision provided by the Monte Carlo (sub picosecond). On the other hand, the time of flight of the scintillating photon is determined by the position of the SiPM which detects it. Since SiPMs have an area of 3 $\times$ 3 $\textrm{mm}^2$, the error associated is of the order of $\sim$ 1.5 mm, which translates to $\sim$ 5 ps for velocities similar to the one of light.}\label{fig.FirstPE}
+%	\includegraphics[scale=0.4]{img/FirstPEScintLXeLYSO.png}
+	\includegraphics[scale=0.4]{img/FirstPEScintLXe.png}
+	\caption{\label{fig.firstPE} Arrival time of the first recorded photon in LXe, after subtracting the time of flight of the incident gamma ($d_g/c$) and the time of flight of the scintillation photons ($n \cdot d_p/c$). The presence of negative bins is due to the the sum of two effects: on one hand, the time registered by sensors is binned with a size of 5 ps, while the time of flight of incident gammas is taken with the precision provided by the Monte Carlo (sub picosecond). On the other hand, the time of flight of the scintillating photon is determined by the position of the SiPM which detects it. Since SiPMs have an area of 3 $\times$ 3 $\textrm{mm}^2$, the error associated is of the order of $\sim$ 1.5 mm, which translates to $\sim$ 5 ps for velocities similar to the one of light.}\label{fig.FirstPE}
 \end{figure} 
 
 Figure \ref{fig.FirstPE} shows the arrival time of the first photoelectron, after subtracting the time of flight of the incident gamma ($d_g/c$) and the time of flight of the scintillation photons ($n \cdot d_p/c$). 
@@ -386,16 +387,18 @@ $, which gives $\delta \Delta t = 11.2$~ps for a DOI resolution $\Delta z = 4.7$
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/DTOFLXeLYSO.png}
-	\caption{\label{fig.dtof} $\delta \Delta t$ in LXe (blue line) and LYSO (green dotted line). The
-	histograms are obtained introducing a spatial resolution of 2 mm for the transverse coordinates and
+%	\includegraphics[scale=0.4]{img/DTOFLXeLYSO.png}
+	\includegraphics[scale=0.4]{img/DTOFLXe.png}
+	\caption{\label{fig.dtof} $\delta \Delta t$ in LXe. The
+	histograms are obtained introducing a spatial resolution of 4.7 mm FWHM for the transverse coordinates and
 	the DOI, fixing the wavelength of the scintillation and the refraction index and setting the PDE of the SiPMs to one. }
 \end{figure}
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/CRTvsPDELXeLYSONoJitterFstPE.png}
-	\caption{\label{fig.crt1} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution but does not include
+%	\includegraphics[scale=0.4]{img/CRTvsPDELXeLYSONoJitterFstPE.png}
+	\includegraphics[scale=0.4]{img/CRTvsPDELXeNoJitterFstPE.png}
+	\caption{\label{fig.crt1} CRT as a function of the PDE in LXe computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution but does not include
 	the dependence of the refraction index in LXe with wavelength.}
 \end{figure}
 
@@ -425,10 +428,11 @@ We also introduce the refraction index of the SiPM entrance window, which we tak
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.40]{img/CRTvsPDE_phys_LXeLYSONoJitterFstPE.png}
-	\caption{\label{fig.crt2} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of Fresnel reflections
-	due to the mismatch between the LXe (LYSO) refraction index and that of the SiPM is also taken into
-	account.  }
+%	\includegraphics[scale=0.40]{img/CRTvsPDE_phys_LXeLYSONoJitterFstPE.png}
+	\includegraphics[scale=0.40]{img/CRT_LXe_phys_jitter.png}
+	\caption{\label{fig.crt2} CRT as a function of the PDE in LXe computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of Fresnel reflections
+	due to the mismatch between the LXe refraction index and that of the SiPM is also taken into
+	account. The blue line does not include the effect of the SiPM and front-end eletronics jitter, while the green dotted line shows also this effect. }
 \end{figure}
 
 Figure \ref{fig.crt2} shows the CRT as a function of the
@@ -439,11 +443,11 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
   Next we introduce the effect of the jitter of the SiPM and front-end electronics, smearing the arrival time of the photoelectrons by a gaussian distributions with $\sigma = \sigma_{\textrm{sipm}} +  \sigma_{\textrm{fee}}$ and setting 
  $\sigma_{\textrm{sipm}} = 80$~ps, $\sigma_{\textrm{fee}} = 30$~ps. These values are typical of modern SiPMs and front-end electronics \cite{FundamentalLimits}. 
  
- \begin{figure}[!bhtp]
-	\centering
-	\includegraphics[scale=0.40]{img/CTR_jitter_phys.png}
-	\caption{\label{fig.crt3} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation includes the effect of the SiPM  and front-end electronics jitter.}
-\end{figure}
+% \begin{figure}[!bhtp]
+%	\centering 
+%	\includegraphics[scale=0.40]{img/CTR_jitter_phys.png}
+%	\caption{\label{fig.crt3} CRT as a function of the PDE in LXe (blue line) and LYSO (green dotted line) computed using the first photoelectron. The calculation includes the effect of the SiPM  and front-end electronics jitter.}
+%\end{figure}
 
  \begin{figure}[!bhtp]
 	\centering
@@ -457,7 +461,7 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
 %	\caption{\label{fig.crt_avg_LYSO} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LYSO. The CRT is shown for several values of the PDE.}
 %\end{figure}
 
-Figure \ref{fig.crt3} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is $\sim$ 100 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
+Figure \ref{fig.crt2} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is $\sim$ 100 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
 CRT of 70 ps.
 
 %Interestingly, the results obtained for LYSO using the first photoelectron to compute $\Delta t$ (a CRT of 125 ps for a PDE of 50\%), agree rather well with the results of Ferri et al  \cite{LysoFBK} {\em when the LYSO crystals were cooled to $-20\,^{\circ}{\rm C}$}, e.g, reducing the DCR by a factor 16). The obvious advantage of LXe is the cryogenic operation, at $\sim -100\,^{\circ}{\rm C}$, which essentially eliminates the effect of the DCR. Thus, an excellent CRT of 70 ps could be achieved if the SiPM--VUV technology is capable of producing sensors with a PDE of 20\%. For a PDE of 15\% corresponding to the best existing devices, the CRT averaging over several photoelectrons is 80 ps, still very good.
@@ -483,13 +487,15 @@ CRT of 70 ps.
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/tpb_decays_pde_500ps.png}
+%	\includegraphics[scale=0.4]{img/tpb_decays_pde_500ps.png}
+	\includegraphics[scale=0.4]{img/tpb_decays_pde_no1ns.png}
 	\caption{\label{fig.crtTPB} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of the jitter of the SiPM and electronics is not included.}
 \end{figure}
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/tpb_decays_jitter_500ps.png}
+%	\includegraphics[scale=0.4]{img/tpb_decays_jitter_500ps.png}
+	\includegraphics[scale=0.4]{img/tpb_decays_jitter_no1ns.png}
 	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE in LXe (red line) and LXe coated  with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
 \end{figure}
 
