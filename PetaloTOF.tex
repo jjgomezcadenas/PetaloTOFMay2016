@@ -2,6 +2,9 @@
 
 \documentclass[11pt,a4paper]{article}
 \usepackage{jinstpub}
+%\usepackage{microtype}
+%\usepackage{dcolumn}
+\usepackage{booktabs}
 
 \let\ifpdf\relax
 
@@ -215,12 +218,12 @@ Equation \ref{eq.scint} fits better in the short range, which is the most releva
 
 \subsection{The PETALO concept}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[scale=0.20]{img/Box_2faces_1.jpg}
-	\includegraphics[scale=0.20758]{img/Box_2faces_3.jpg}
-	\caption{The LXSC2 instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB).}\label{fig.box} 
-\end{figure}
+%\begin{figure}[!htbp]
+%	\centering
+%	\includegraphics[scale=0.20]{img/Box_2faces_1.jpg}
+%	\includegraphics[scale=0.20758]{img/Box_2faces_3.jpg}
+%	\caption{The LXSC2 instruments the entry and exit faces of the box (relative to the photon line of flight) with silicon photomultipliers (SiPMs), which can be eventually coated with TPB. The non-instrumented faces are covered by reflecting Teflon (optionally also coated with TPB).}\label{fig.box} 
+%\end{figure}
 
 %The first idea of using a LXe time projection chamber for PET was proposed in 1993 by Chepel \cite{chepelFirst}. 
 The possibility of building a LXe PET based on the excellent properties of LXe as scintillator was first suggested by Lavoie in 1976 \cite{lavoie}. In 1993, Chepel proposed to read both scintillation and ionization charge in a LXe Time Projection Chamber \cite{chepelFirst} and an extensive work has been done since then by him and co-workers \cite{chepelLXe, chepelRes, chepelEnergyRes}. In the late '90s, Doke and Masuda proposed to use a liquid xenon scintillating calorimeter read out by photomultipliers surrounding completely the whole volume \cite{DokeMasuda}. This idea, applied to PET, was studied by the Waseda group \cite{Doke1,Nishikido2,Nishikido1} with a prototype based in LXe cells read out by VUV-sensitive PMTs which covered 5 of the 6 sides of the cell. 
@@ -238,7 +241,7 @@ overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that
 
 %% Referee's concern about the digital resolution
 %The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be $p/\sqrt{12}$, where $p$ is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM. 
-The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM can be obtained for a box of $5\times5\times5$ cm \cite{tfm}, in this study we have a smaller pitch (there is no space between SiPMs), so a slightly better (x,y) resolution could be expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 3 mm FWHM \cite{tfm}. These resolutions include the full detector volume, there is no fiducial cut.
+The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM can be obtained for a box of $5\times5\times5$ $\textrm{cm}^3$ \cite{tfm}. In the current study we have a smaller pitch (there is no space between SiPMs), so a slightly better $xy$ resolution is expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be 3 mm FWHM \cite{tfm}. Both resolutions are calculated for interactions occurring the full detector volume, without fiducial cuts.
 
 \subsection{VUV-sensitive SiPMs versus SiPMs coated with TPB}
 
@@ -293,16 +296,35 @@ and re-emitted isotropically \cite{Gehman:2011xm}. The decay constant of TPB has
 \section{Monte Carlo study of the CRT in the LXSC2} 
 \label{sec.CRT}
 
-To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version geant4.10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
-$2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source 
-(figure \ref{fig.psetup}) and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm.
-
- \begin{figure}[!bthp]
+\begin{figure}[!bthp]
 	\centering
-	\includegraphics[scale=0.4]{img/PetaloSetupAxes.png}
-	\caption{\label{fig.psetup} Monte Carlo simulation of gamma interactions in the LXe setup, as 
-	described in the text. Gammas are emitted from (0, 0, 0) in direction $(0.0363, -0.0644, -0.9972)$ and its opposite one. }
+	\includegraphics[scale=0.35]{img/scheme3.pdf}
+	\caption{\label{fig.psetup} Scheme of the Monte Carlo simulation set-up, where $d_g$ is the distance between the LOR and the interaction point of the 511-keV gamma, $d_d$ is the distance between the LOR and the emission point of gammas and $d_p$ is the distance that the scintillation VUV photon covers between its emission and detection point. }
 \end{figure}
+
+To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version geant4.10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
+$2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm. In Table \ref{thetable} the Monte Carlo setup specification as well as the values of the relevant parameters used are summarized.
+
+\begin{table*}[h!]\centering
+\begin{tabular}{@{}c|c@{}}\toprule
+Parameter & Value \\  \midrule
+\multicolumn{2}{c}{Geometry}\\  \midrule
+Cell dimensions & $2.4\times 2.4 \times 5$ cm$^3$ \\
+Distance between cell entry faces & 20 cm \\
+SiPM active area &  $3\times 3$ $\textrm{mm}^2$\\
+SiPM pitch & 3 mm\\
+Number of SiPMs per face & 64 \\
+Reflectivity of Teflon walls & 0.97 \\
+\midrule
+\multicolumn{2}{c}{LXe properties}\\  \midrule
+Density & 2.98 g/cm$^3$ \\
+Attenuation length for 511 keV gammas & 3.7 cm \\
+Scintillation yield for 511 keV gamma & $\sim 30\ 000$ photons \\
+Average scintillation wavelength & 178 nm \\
+Rayleigh scattering length &  36.4 cm \\
+ \end{tabular}
+\caption{.}\label{thetable}
+\end{table*}
 
 %% Polar coordinates: theta = 0.0703112, phi = -1.10715, r = 127.315 mm
 
@@ -323,7 +345,7 @@ $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
  %  If the SiPM is coated with TPB, the VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. 
  
-We denote $d_g$ as the distance from the centre of the LOR to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor). If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
+We denote $d_g$ as the distance from the centre of the LOR to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor), as illustrated in figure \ref{fig.psetup}. If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
 %
 \begin{equation}
 t_1 - t_2 = 2\frac{d_d}{c} + \frac{\Delta d_g}{c} + \frac{ \Delta d_p}{v_p}
@@ -354,11 +376,12 @@ $\delta \Delta t$, is defined as the variance\footnote{expressed in FWHM unless 
 	\caption{\label{fig.nlambda} LXe refraction index as a function of the wavelength of the optical photon, as results from the parametrization in Ref.~\cite{Baldini:2004td}. For wavelengths in the emission range of TPB ($\sim$ 400--600 nm) the refraction index is practically flat, and has a value of 1.4.}
 \end{figure}
 
-
 Notice that, while the calculation of the term $\Delta d_g/c$~is immediate, finding the value
 of $\Delta d_p/v_p$ requires the knowledge of the refraction index of the medium (which in turn is a function of the wavelength of the scintillation photons, see figure \ref{fig.nlambda}) and the interaction vertices of the gammas in the LXSCs, whose determination depends on the spatial resolution (and in particular of the DOI resolution) of the setup. Furthermore, the recorded time of the photoelectrons is affected by the time jitter of the sensor and the front-end electronics, as well as by the overall clock system. Other effect that affect the CRT is the additional decay constant (about 2.2 ns) introduced if the SiPMs of the LXSC2 are coated with TPB. 
 
 In the remaining of this section we study systematically the various factors contributing to the CRT in LXe. 
+
+
 
 \subsection{Intrinsic CRT: effect of the DOI resolution}
 We start our study by assuming that the refraction index of LXe is constant, with a value of 1.7 (which is the average of the values it assumes in the scintillation wavelength range). We also fix the refraction index of the SiPM window to the same value so that $n_1 = n_2$ and therefore all photons impinging the SiPM with an angle less than $90\,^{\circ}$~enter the sensor. These (unphysical) assumptions are made in order to separate the contributions to the CRT due to the scintillation lifetime and the DOI resolution from those related with the refraction index. 
@@ -422,7 +445,7 @@ This implies that the xenon VUV photons propagate with different velocities depe
 %To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$ in equation \ref{eq.CRT}. 
 This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. 
 
-We also introduce the refraction index of the SiPM entrance window, which we take as $n_1 = 1.54$ (a typical value, quoted, for example, for the SensL C-series 6 mm sensors \cite{nSensL}). The mismatch with the xenon refraction index results in a reduction of the efficiency due to Fresnel reflections. 
+We also introduce the refraction index of the SiPM entrance window, which we take as $n_1 = 1.54$ (a typical value, quoted, for example, for the SensL C-series 6 mm sensors \cite{pde}). The mismatch with the xenon refraction index results in a reduction of the efficiency due to Fresnel reflections. 
 %The critical angle in xenon is $65\,^{\circ}$ ($58\,^{\circ}$~in LYSO) and the fraction of photons transmitted through the SiPM window is 63.5\% for LXe (56\% for LYSO).  
 
 \begin{figure}[!bhtp]
@@ -460,7 +483,7 @@ Figure \ref{fig.crt2} shows the CRT as a function of the
 %	\caption{\label{fig.crt_avg_LYSO} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LYSO. The CRT is shown for several values of the PDE.}
 %\end{figure}
 
-Figure \ref{fig.crt2} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is $\sim$ 110 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
+Figure \ref{fig.crt2} shows the CRT as a function of the SiPM nominal PDE. The CRT for PDE = 1 is 90 ps, while for a PDE of 20\%  it is 110 ps. However, the CRT can improve computing $\Delta t$~as an average of the first few photoelectrons, rather than using only the first photoelectron. This is shown in figure \ref{fig.crt_avg_LXe}, which shows that for a PDE of 20\% it is possible to reach a
 CRT of 70 ps.
 
 %Interestingly, the results obtained for LYSO using the first photoelectron to compute $\Delta t$ (a CRT of 125 ps for a PDE of 50\%), agree rather well with the results of Ferri et al  \cite{LysoFBK} {\em when the LYSO crystals were cooled to $-20\,^{\circ}{\rm C}$}, e.g, reducing the DCR by a factor 16). The obvious advantage of LXe is the cryogenic operation, at $\sim -100\,^{\circ}{\rm C}$, which essentially eliminates the effect of the DCR. Thus, an excellent CRT of 70 ps could be achieved if the SiPM--VUV technology is capable of producing sensors with a PDE of 20\%. For a PDE of 15\% corresponding to the best existing devices, the CRT averaging over several photoelectrons is 80 ps, still very good.
