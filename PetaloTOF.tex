@@ -241,7 +241,7 @@ overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that
 
 %% Referee's concern about the digital resolution
 %The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be $p/\sqrt{12}$, where $p$ is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM. 
-The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM can be obtained for a box of $5\times5\times5$ $\textrm{cm}^3$ \cite{tfm}. In the current study we have a smaller pitch (there is no space between SiPMs), so a slightly better $xy$ resolution is expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be 3 mm FWHM \cite{tfm}. Both resolutions are calculated for interactions occurring the full detector volume, without fiducial cuts.
+The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM has been obtained in Monte Carlo simulations for a box of $5\times5\times5$ $\textrm{cm}^3$ \cite{tfm}. In the current study we have a smaller pitch (there is no space between SiPMs), so a slightly better $xy$ resolution is expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be 3 mm FWHM \cite{tfm}. Both resolutions are calculated for interactions occurring the full detector volume, without fiducial cuts.
 
 \subsection{VUV-sensitive SiPMs versus SiPMs coated with TPB}
 
@@ -302,7 +302,7 @@ and re-emitted isotropically \cite{Gehman:2011xm}. The decay constant of TPB has
 	\caption{\label{fig.psetup} Scheme of the Monte Carlo simulation set-up, where $d_g$ is the distance between the LOR and the interaction point of the 511-keV gamma, $d_d$ is the distance between the LOR and the emission point of gammas and $d_p$ is the distance that the scintillation VUV photon covers between its emission and detection point. }
 \end{figure}
 
-To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version geant4.10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
+To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version number 10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
 $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm. In Table \ref{thetable} the Monte Carlo setup specification as well as the values of the relevant parameters used are summarized.
 
 \begin{table*}[h!]\centering
@@ -434,7 +434,7 @@ $, which gives $\delta \Delta t = 11.2$~ps for a DOI resolution $\Delta z = 4.7$
 	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe, given the refraction index shown in figure \ref{fig.nlambda} and the emission spectrum shown in figure \ref{fig.spectrumLXe}.}
 \end{figure}
 
-The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda}.  The velocity of propagation of VUV photons in the Geant-4 simulation is the group velocity $v_g$, and it depends on the refraction index, which, in turn, depends on the energy of the photon, according to the following relationship:
+The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda}.  The velocity of propagation of VUV photons in the Geant-4 simulation is the group velocity $v_g$, rather than the phase velocity, and it depends on the refraction index, which, in turn, depends on the energy of the photon, according to the following relationship:
 %
 \begin{equation}
 v_g = c\times \left(n(E)+\frac{dn}{d(log(E))}\right)^{-1}
@@ -443,7 +443,7 @@ v_g = c\times \left(n(E)+\frac{dn}{d(log(E))}\right)^{-1}
 %
 This implies that the xenon VUV photons propagate with different velocities depending on their wavelength. The distribution of the velocity of  the optical photons emitted in LXe scintillation, simulated according to equation \ref{eq.velocity}, is shown in figure \ref{fig.vLXe}. 
 %To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$ in equation \ref{eq.CRT}. 
-This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. 
+This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. The measurement of the VUV photon velocity will be one of the subjects of study of the first PETALO prototype.
 
 We also introduce the refraction index of the SiPM entrance window, which we take as $n_1 = 1.54$ (a typical value, quoted, for example, for the SensL C-series 6 mm sensors \cite{pde}). The mismatch with the xenon refraction index results in a reduction of the efficiency due to Fresnel reflections. 
 %The critical angle in xenon is $65\,^{\circ}$ ($58\,^{\circ}$~in LYSO) and the fraction of photons transmitted through the SiPM window is 63.5\% for LXe (56\% for LYSO).  
@@ -524,7 +524,7 @@ CRT of 70 ps.
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.4]{img/tpb_avg_npe_phys.png}
-	\caption{\label{fig.crtTPBavg} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe with TPB. The blue line is computed for a TPB decay time of 2.2 ns, while the green dotted line is for 3.0 ns.}
+	\caption{\label{fig.crtTPBavg} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for LXe with TPB assuming a 50$\%$ PDE. The blue line is computed for a TPB decay time of 2.2 ns, while the green dotted line is for 3.0 ns.}
 \end{figure}
 
 %\begin{figure}[!bhtp]

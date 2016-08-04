@@ -1,0 +1,84 @@
+Dear editor and reviewers,
+
+We have greatly appreciated your comments and suggestions. Before going into specific comments, we would like to address some general points that have been made by more than one referee.
+
+General points
+1) We agree that a comparison of LXe with LYSO is not easy to perform and it relies on several assumptions for both cases, so we have decided to present our results for LXe and its intrinsic potential without mentioning LYSO.
+2) Also, we have eliminated the 1 ns decay time case for TPB (which is still not proven to be achievable) and we have used 2.2 ns as the best case.
+3) On the other hand, we'd like to stress that a PDE of 20% for VUV-sensitive SiPMs has already been achieved (a reference has been added), therefore we have used this as a default value in our analysis.
+4) As far as concerns the spatial resolution that we quote from the master's thesis dissertation, we have added a brief description of how it has been calculated at the end of section 3.1. In particular, we stress that the results for both the transverse and longitudinal resolution are an average for interaction points all over the cell volume. For more details, we point to the reference.
+5) Finally, we have reviewed all the plots and the numbers quoted in the text to correct possible bugs and disagreements.
+
+In the following, we're going to address one by one the rest of the comments.
+
+Report of referee 1:
+
+General comments:
+- We have numbered all the subsections, as suggested.
+- We have added the version of geant4 that we've used at the beginning of section 4.
+
+Abstract
+- We have corrected the abstract, using the values for the CRT which appear in the text. The other comments have been addressed in point 2), 3) and 5) above.
+
+Section 2
+- We have added numbering to subsections, to make the reading clearer.
+- We are referring to the Rayleigh scattering. We have changed the text to "an acceptable Rayleigh scattering length (36.4 cm)".
+- We have rephrased to a generic "their DCR is essentially negligible" and we have added the reference to a document of the SensL company where a plot of the dark current rate versus the temperature is drawn, which shows that the dark current rate approaches 0 for low temperature.
+- We have added the suggested reference.
+- The referee is right. We have eliminated the parentheses where we mentioned "the order of few ps".
+- We have rewritten eq. 2.1 expanded in all its terms.
+- Yes, they are the same decay constants. It turns out that this expression fits very well for short times, which are the relevant ones in our analysis, so we've decided to use it. The motivation for using this expression instead of equation 2.7 is the way the geant4 package simulate scintillation. In the geant4 package it is not possible to use the whole equation 2.7 as it is, because the scintillation class can only deal with exponentials, one or two at most. We have added the adverb "only" to the following sentence to clarify this: "This parametrization is the one used in the simulation studies throughout this paper, since the Geant-4 simulation toolkit on which our simulation is based [13] can only model the production of scintillation photons as a single or double exponential."
+
+Section 3
+- We have rephrased the whole sentence in order to make clear that the Coimbra grup pioneered the field.
+- We have removed figure 3 and added information on the number of SiPMs per face and their active area at the beginning of section 4.
+- We have removed figure 3 altogether.
+- We have added the full denomination and kept "ASICs" in parenthesis, since it is the commonly used name.
+- See point 4) above.
+- See point 4) above. The resolution quoted is now expressed as FWHM.
+- See point 4) above.
+- We have used the value of 20% for the PDE, see point 3) above. Therefore, we have changed the sentence accordingly.
+- The value of 1 ns for the decay time of TPB has been replaced by 2.2 ns (see point 2) above) and all the numbers through the paper has been changed accordingly.
+
+Section 4
+- We have added the version of geant4 used at the beginning of section 4.
+- We have added the value of the active area of SiPMs and the pitch at the beginning of section 4. Moreover, we have added a table with all the relevant parameters of the Monte Carlo setup and the physics properties of liquid xenon used in the simulation.
+- We have changed the term as suggested.
+- We have decided to eliminate the whole sentence on incidence angles, since it didn't add anything relevant to the section.
+- We have replaced the figure as suggested.
+- See above.
+- That was a typo, we have corrected the equation, eliminating the x.
+- That was also a typo, we have corrected to d_p.
+- We believe that this figure adds some information to the mere decay time distribution of the scintillation light, since it is not straightforward which r.m.s a decay time modelled as the sum of two exponentials introduces in the recorded time of the first photon. For this reason, we think that it's worth keeping it.
+- We have added the size of the SiPMs at the beginning of the section.
+- We have eliminated the comparison with LYSO from the whole paper, see point 1) above.
+- See points 1) and 3) above.
+- Figure 10 is the distribution of the group velocity of the scintillation VUV photons as simulated by Geant4. We have explained explicitely in the text that the velocity being used is the group one and not the phase one and we have stated the expression that relates the velocity with the refraction index, in order not to misguide the reader. We have mentioned that the measurement of photon velocities will be addressed in our first PETALO prototype.
+- We have eliminated any reference to specific values of the incident angles, since it was not a relevant piece of information.
+- See point 1) and 3) above.
+- See point 1) and 3) above.
+- See point 1) and 3) above.
+- We have added in the caption the sentence: "The effect of the jitter of the SiPM and electronics is not included."
+- We have added the suggested plot, which is now figure 14. 
+- See point 1) above.
+
+Section 5
+- That was a typo, the value is ~ 11 ps and it has been corrected in the text.
+- See point 1) above.
+- See point 1) and 2) above.
+
+Report of referee 2:
+
+- Figure 10 is the distribution of the group velocity of the scintillation VUV photons as simulated by geant4. We have explained explicitely in the text that the velocity being used is the group one and not the phase one and we have stated the expression that relates the velocity with the refraction index, in order not to misguide the reader.
+- That was a typo. However, the whole sentence has been eliminated together with the comparison with LYSO.
+- We have eliminated the comparison with LYSO from the whole paper, see point 1) above.
+- We have added the suggested plot, which is now figure 14.
+
+
+
+Editor's comments
+- Corrected.
+- See point 4) above. We have also made explicit that we are talking about Monte Carlo simulations.
+- We have replaced the plots taken from reference 25 with a plot of the distribution of the TPB re-emission spectrum produced by our simulation. The input of the simulation comes from reference 25, and it's stated in the caption.
+- We have specified the SiPM size at the beginning of section 4. We have also added a table with all relevant simulation parameters.
+- We have eliminated the comparison with LYSO from the whole paper, see point 1) above.
