@@ -107,7 +107,7 @@ Once an event in the region of interest (around 511 keV of total deposited energ
 
 \subsection{Scintillation in LXe} \label{sec.scint}
 
-When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric, which happens in $\sim$ 20 \% of the events, or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium. Most of the scintillation light in xenon is emitted by diatomic excited molecules which are formed through two distinct processes:
+When a 511 keV gamma interacts in liquid xenon it will produce a secondary electron (by either photoelectric effect, which happens in $\sim$ 20 \% of the events, or Compton interaction) which in turn will propagate a short distance in the liquid, ionizing the medium. Most of the scintillation light in xenon is emitted by diatomic excited molecules which are formed through two distinct processes:
 \begin{enumerate}
 \item Excitation of atoms by electron impact with subsequent formation of strongly bound diatomic molecules in the excited state (excitons). We refer to this process as scintillation due to exciton self-trapping or SE.
 \item Recombination of the ionization electrons with positive ions. We call this process scintillation due to recombination or SR. 
@@ -157,25 +157,26 @@ I^R_2 =\frac{e^{-t/\tau_2}}{\tau_2}
 	\centering
 	\includegraphics[scale=0.6]{img/Fit10ns_ROOT.pdf}
 %	\includegraphics[width=.5\textwidth]{../img/TOFPET.jpg}
-	\caption{\label{fig.scint} Intensity of scintillation in LXe as a function of time. Blue dots are obtained from equation \ref{eq.tot.full}, using time constants and intensities from reference \cite{Kubota79}. The red line is the same data fitted with the function in equation \ref{eq.scint}. Although the distribution extends up to several hundreds of nanoseconds, only the first 10 ns are shown, which is the range used for the fit. In the simulation studies presented in this work, only the first nanoseconds are relevant, since the CRT is determined by the arrival time of first few photoelectrons.}
+	\caption{\label{fig.scint} Intensity of scintillation in LXe as a function of time for the first 10 ns following a 511 keV gamma interaction. Blue dots are obtained from equation \eqref{eq.tot.full}, using time constants and intensities from reference \cite{Kubota79}. The red line is the same data fitted with the function in equation \eqref{eq.scint}. Although the distribution extends up to several hundreds of nanoseconds, only the first 10 ns are shown, which is the range used for the fit. In the simulation studies presented in this work, only the first nanoseconds are relevant, since the CRT is determined by the arrival time of first few photoelectrons.}
 \end{figure}
 %
-Thus, equation \ref{eq.tot} can be expressed as:
+Thus, equation \eqref{eq.tot} can be expressed as:
 %
 \begin{equation}
-I = 0.3\times \left(0.15\times \frac{e^{-t/\tau_1}}{\tau_1} +  0.85\times \frac{e^{-t/\tau_2}}{\tau_2} \right) + 0.7\times \left(0.44\times (1 + \frac{t}{T_r})^{-2} +  0.56\times \frac{e^{-t/\tau_2}}{\tau_2}\right)
+I = 0.3\times 0.15\times \frac{e^{-t/\tau_1}}{\tau_1} +  (0.3 \times 0.85 +  0.7\times 0.56) \times \frac{e^{-t/\tau_2}}{\tau_2} + 0.7\times 0.44\times (1 + \frac{t}{T_r})^{-2}
+%I = 0.3\times \left(0.15\times \frac{e^{-t/\tau_1}}{\tau_1} +  0.85\times \frac{e^{-t/\tau_2}}{\tau_2} \right) + 0.7\times \left(0.44\times (1 + \frac{t}{T_r})^{-2} +  0.56\times \frac{e^{-t/\tau_2}}{\tau_2}\right)
  \label{eq.tot.full}
 \end{equation}
 %
 
-Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30\,000$ VUV photons), according to equation \ref{eq.tot.full} (blue dots). This distribution is well described in terms of the sum of two exponential distributions with decay constants $\tau_1$ and $\tau_2$. The fit, shown in figure \ref{fig.scint}, gives the following distribution for the number of photons: 
+Figure \ref{fig.scint} shows the total intensity of scintillation in LXe for a 511 keV gamma (resulting in a total of $N_\gamma =30\,000$ VUV photons), for the first 10 ns after the interaction, according to equation \eqref{eq.tot.full} (blue dots). During this initial period, this distribution is well described in terms of the sum of two exponential distributions with decay constants $\tau_1$ and $\tau_2$. The fit, shown in figure \ref{fig.scint}, gives the following distribution for the number of photons: 
 
 \begin{equation}
 I(t) = N_\gamma (0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^{-t/\tau_2}}{\tau_2})
 \label{eq.scint}
 \end{equation}
 %
-Equation \ref{eq.scint} fits better in the short range, which is the most relevant for CRT estimations. This parametrization is the one used in the simulation studies throughout this paper, since the Geant-4 simulation toolkit on which our simulation is based \cite{Agostinelli:2002hh} can only model the production of scintillation photons as a single or double exponential.
+Equation \eqref{eq.scint} fits better in the short range, which is the most relevant for CRT estimations. This parametrization is the one used in the simulation studies throughout this paper, since the Geant-4 simulation toolkit on which our simulation is based \cite{Agostinelli:2002hh} can only model the production of scintillation photons as a single or double exponential.
 
 %Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
 %$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
@@ -240,7 +241,7 @@ overall resolution of the order of 12\% FWHM for 511 keV gammas, similar to that
 
 %% Referee's concern about the digital resolution
 %The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight) is obtained in the LXSC2 by the weighted pulses in the SiPMs. The digital resolution would be $p/\sqrt{12}$, where $p$ is the pitch. With a pitch of 6 mm a 1.7 mm rms or 4 mm FWHM could be expected. Weighting with the SiPM amplitude improves the resolution to about 2 mm FWHM. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be also 2 mm FWHM. 
-The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM has been obtained in Monte Carlo simulations for a box of $5\times5\times5$ $\textrm{cm}^3$ \cite{tfm}. In the current study we have a smaller pitch (there is no space between SiPMs), so a slightly better $xy$ resolution is expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be 3 mm FWHM \cite{tfm}. Both resolutions are calculated for interactions occurring in the full detector volume, without fiducial cuts.
+The spatial resolution in the (x,y) coordinates (transverse to the gammas line of flight), meaning the precision in identifying the position of a single-vertex interaction, is obtained in the LXSC2 by the weighted pulses in the SiPMs using a centre-of-gravity algorithm. With this procedure, a resolution of 4.7 mm FHWM has been obtained in Monte Carlo simulations for a box of $5\times5\times5$ $\textrm{cm}^3$ \cite{tfm}. In the current study we have a smaller pitch (there is no space between SiPMs), so a slightly better $xy$ resolution is expected. The DOI is obtained by computing the ratio between the total signal recorded in the entry and exit face, and its resolution is found to be 3 mm FWHM \cite{tfm}. Both resolutions are an average for interactions occurring in the full detector volume, without fiducial cuts.
 
 \subsection{VUV-sensitive SiPMs versus SiPMs coated with TPB}
 
@@ -298,10 +299,10 @@ and re-emitted isotropically \cite{Gehman:2011xm}. The decay constant of TPB has
 \begin{figure}[!bthp]
 	\centering
 	\includegraphics[scale=0.35]{img/scheme3.pdf}
-	\caption{\label{fig.psetup} Scheme of the Monte Carlo simulation set-up, where $d_g$ is the distance between the LOR and the interaction point of the 511-keV gamma, $d_d$ is the distance between the LOR and the emission point of gammas and $d_p$ is the distance that the scintillation VUV photon covers between its emission and detection point. }
+	\caption{\label{fig.psetup} Scheme of the Monte Carlo simulation set-up, where $d_g$ is the distance between the geometrical centre of the system and the interaction point of the 511-keV gamma, $d_d$ is the distance between the geometrical centre of the system and the emission point of the gammas and $d_p$ is the distance that the scintillation VUV photon covers between its emission and detection point. }
 \end{figure}
 
-To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version number 10.01.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
+To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version number 10.1.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
 $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm. In Table \ref{thetable} the Monte Carlo set-up specification as well as the values of the relevant parameters used are summarized.
 
 \begin{table*}[h!]\centering
@@ -339,12 +340,12 @@ Rayleigh scattering length &  36.4 cm \\
 %	($n \cdot \Delta d_p/c$). }\label{fig.setup} 
 %\end{figure}  
 
-  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \ref{eq.scint}  and propagate through the material. The photons reach eventually the SiPMs and, depending on the PDE of the SiPM, may result in a photoelectron.
+  Back to back 511 keV gammas are shot isotropically, from a common vertex within the solid angle covered by two opposite LXSC2 ($2.4 \times 2.4 \times 5\ {\rm cm^3}$). The gammas interact in the LXSCs producing scintillation photons according to equation \eqref{eq.scint}  which are propagated through the material. The photons reach eventually the SiPMs and, depending on the PDE of the SiPM, may result in a photoelectron.
   %If the SiPM is not coated with TPB, the photon will enter the SiPM window if the angle of incidence is below the critical angle defined by the ratio of the refraction indexes $n_2$, $n_1$ of the LXSC (LYSO) and the SiPM window $\sin \theta_c = n_2/n_1$. SiPMs are usually covered with a passivation layer, whose refractive index is similar to that of SiO$_2$ and is around 1.4 --1.5 \cite{nSiPM}.
   %,  where we take $n_1$ = 1.54 as the refraction index of the SiPM window andå  $n_2$ = 1.7 (1.8) as the refraction index of the LXe (LYSO).
  %  If the SiPM is coated with TPB, the VUV photon is absorbed with an efficiency of 80\% and re-emitted isotropically with a wavelength given by figure \ref{fig.tpb}, then enters the SiPM window with a much larger critical angle, since  $n_2 \sim n_1$~for LXe in the visible region. 
  
-We denote $d_g$ as the distance from the centre of the LOR to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the LOR and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor), as illustrated in figure \ref{fig.psetup}. If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
+We denote $d_g$ as the distance from the centre of the geometrical system to the interaction vertex of each 511 keV gamma, $d_d$ as the displacement of the gamma emission vertex from the centre of the geometrical system and $d_p$ as the distance from the interaction vertex to the detection vertex (i.e., the position of the sensor), as illustrated in figure \ref{fig.psetup}. If $t_1,t_2$ are the time of the first photoelectron recorded in each one of the LXSC, the time difference between them can be written as:
 %
 \begin{equation}
 t_1 - t_2 = 2\frac{d_d}{c} + \frac{\Delta d_g}{c} + \frac{ \Delta d_p}{v_p}
@@ -403,7 +404,7 @@ $
 \delta \Delta t =\Delta z \times n \times 3.3\ \textrm{ps/mm}
 %\label{eq.DOI}
 %\end{equation}
-$, which gives $\delta \Delta t = 11.2$~ps for a DOI resolution $\Delta z = 4.7$~mm FWHM. 
+$, which gives $\delta \Delta t = 26.3$~ps FWHM for a DOI resolution $\Delta z = 4.7$~mm FWHM. 
 %Notice, on the other hand, that a DOI resolution of 2 mm FWHM requires either a double layer of SiPMs (as in the LXSC2) or small monolithic crystals (for example, in reference \cite{VanDamm2011} the authors find a DOI resolution varying between 1 and 4.5 mm FWHM for LYSO crystals of  $20 \times 20 \times 12 ~{\rm mm^3})$). Instead, a conventional segmented LYSO crystal, 20 mm thick, would have a DOI resolution given by the digital resolution, which is determined by the pitch, $20{\textrm{ mm}}/\sqrt{12}$ = 5.8 mm, resulting in a $\delta \Delta t = 34$~ps.
 
 \begin{figure}[!bhtp]
@@ -424,13 +425,13 @@ $, which gives $\delta \Delta t = 11.2$~ps for a DOI resolution $\Delta z = 4.7$
 \end{figure}
 
  Figure \ref{fig.dtof} shows $\delta \Delta t$ for the ideal case of PDE = 1. Figure \ref{fig.crt1} shows the CRT as a function of the
- SiPM PDE. The CRT for PDE = 1 is $\sim$11 ps (thus totally dominated by the uncertainty in DOI). This value can be taken as the absolute best limit of the CRT in LXe. For a PDE of 20\% (best value of VUV--sensitive SiPMs) the CRT in LXe is $\sim$ 30 ps.   
+ SiPM PDE. The CRT for PDE = 1 is $\sim$26 ps (thus totally dominated by the uncertainty in DOI). This value can be taken as the absolute best limit of the CRT in LXe. For a PDE of 20\% (best value of VUV--sensitive SiPMs) the CRT in LXe is $\sim$ 30 ps.   
 
 \subsection{Effect of the refraction index}
 \begin{figure}[!bhtp]
 	\centering
 	\includegraphics[scale=0.6]{img/VelocityDistrLXe.pdf}
-	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe, given the refraction index shown in figure \ref{fig.nlambda} and the emission spectrum shown in figure \ref{fig.spectrumLXe}.}
+	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe, given the refraction index shown in figure \ref{fig.nlambda} and the emission spectrum shown in figure \ref{fig.spectrumLXe} and considering the group velocity described in Eq.~\eqref{eq.velocity}.}
 \end{figure}
 
 The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda}.  The velocity of propagation of VUV photons in the Geant-4 simulation is the group velocity $v_g$, rather than the phase velocity, and it depends on the refraction index, which, in turn, depends on the energy of the photon, according to the following relationship:
@@ -440,9 +441,9 @@ v_g = c\times \left(n(E)+\frac{dn}{d(log(E))}\right)^{-1}
 \label{eq.velocity}
 \end{equation}
 %
-This implies that the xenon VUV photons propagate with different velocities depending on their wavelength. The distribution of the velocity of  the optical photons emitted in LXe scintillation, simulated according to equation \ref{eq.velocity}, is shown in figure \ref{fig.vLXe}. 
+This implies that the xenon VUV photons propagate with different velocities depending on their wavelength. The distribution of the velocity of  the optical photons emitted in LXe scintillation, simulated according to equation \eqref{eq.velocity}, is shown in figure \ref{fig.vLXe}. 
 %To take into account this effect, one must use the average group velocity of the photons instead of the constant term $n/c$ in equation \ref{eq.CRT}. 
-This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. The measurement of the VUV photon velocity will be one of the subjects of study of the first PETALO prototype.
+This introduces an extra smearing which contributes to the CRT, due to the spread of the average velocity. The measurement of the VUV photon velocity will be one of the subjects of study of the first PETALO prototype, to test the validity of this assumption.
 
 We also introduce the refraction index of the SiPM entrance window, which we take as $n_1 = 1.54$ (a typical value, quoted, for example, for the SensL C-series 6 mm sensors \cite{pde}). The mismatch with the xenon refraction index results in a reduction of the efficiency due to Fresnel reflections. 
 %The critical angle in xenon is $65\,^{\circ}$ ($58\,^{\circ}$~in LYSO) and the fraction of photons transmitted through the SiPM window is 63.5\% for LXe (56\% for LYSO).  
@@ -510,14 +511,14 @@ CRT of 70 ps.
 	\centering
 %	\includegraphics[scale=0.4]{img/tpb_decays_pde_500ps.png}
 	\includegraphics[scale=0.4]{img/tpb_decays_pde_no1ns.png}
-	\caption{\label{fig.crtTPB} CRT as a function of the PDE using VUV-sensitive SiPMs and conventional SiPMs coated with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of the jitter of the SiPM and electronics is not included.}
+	\caption{\label{fig.crtTPB} CRT as a function of the PDE using VUV-sensitive SiPMs and conventional SiPMs coated with TPB, assuming two decay times. The CRT is computed using the first photoelectron. The calculation takes into account the scintillation yield and decay time as well as the DOI resolution and the dependence of the refraction index in LXe with wavelength. The effect of the jitter of the SiPM and electronics is not included.}
 \end{figure}
 
 \begin{figure}[!bhtp]
 	\centering
 %	\includegraphics[scale=0.4]{img/tpb_decays_jitter_500ps.png}
 	\includegraphics[scale=0.4]{img/tpb_decays_jitter_no1ns.png}
-	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE using VUV-sensitive SiPMs and conventional SiPMs coated with TPB, assuming several decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
+	\caption{\label{fig.crtTPBjit} CRT as a function of the PDE using VUV-sensitive SiPMs and conventional SiPMs coated with TPB, assuming two decay times. The CRT is computed using the first photoelectron. The effect of the jitter of the SiPM and electronics is included. }
 \end{figure}
 
 \begin{figure}[!bhtp]
