@@ -176,7 +176,7 @@ I(t) = N_\gamma (0.07 \times \frac{e^{-t/\tau_1}}{\tau_1} + 0.93 \times \frac{e^
 \label{eq.scint}
 \end{equation}
 %
-Equation \eqref{eq.scint} fits better in the short range, which is the most relevant for CRT estimations. This parametrization is the one used in the simulation studies throughout this paper, since the Geant-4 simulation toolkit on which our simulation is based \cite{Agostinelli:2002hh} can only model the production of scintillation photons as a single or double exponential.
+Equation \eqref{eq.scint} fits better in the short range, which is the most relevant for CRT estimations. This parametrization is the one used in the simulation studies throughout this paper, since the Geant4 simulation toolkit on which our simulation is based \cite{Agostinelli:2002hh} can only model the production of scintillation photons as a single or double exponential.
 
 %Using equation \ref{eq.scint} it is possible to estimate the potential of LXe for TOF measurements, in particular compared with LYSO. The intrinsic CRT of a scintillator is proportional to the figure of merit 
 %$\psi = N_{pe}/\tau$, where $\tau$~is the lifetime of the scintillator and $N_{pe}$~is the number of photoelectrons, which in turn can be written as $N_{pe} = N_\gamma \times $PDE. Here $N_\gamma$ is the total number of photons emitted by the scintillator and PDE the overall particle detection efficiency of the sensor reading the scintillation light. 
@@ -302,7 +302,7 @@ and re-emitted isotropically \cite{Gehman:2011xm}. The decay constant of TPB has
 	\caption{\label{fig.psetup} Scheme of the Monte Carlo simulation set-up, where $d_g$ is the distance between the geometrical centre of the system and the interaction point of the 511-keV gamma, $d_d$ is the distance between the geometrical centre of the system and the emission point of the gammas and $d_p$ is the distance that the scintillation VUV photon covers between its emission and detection point. }
 \end{figure}
 
-To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant-4 toolkit \cite{Agostinelli:2002hh}, with distribution version number 10.1.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
+To systematically study the different factors that enter the CRT, we have simulated a LXe setup and a LYSO setup, using the Geant4 toolkit \cite{Agostinelli:2002hh}, with distribution version number 10.1.p01.  All the simulations described in this paper use this set-up. The LXe setup consists of two LXSC2 of 
 $2.4 \times 2.4 \times 5 {\rm ~cm^3}$, facing each other in opposite sides of a 511 keV gamma source and equipped with SiPMs which can be either sensitive to the xenon ultraviolet (VUV) light, or coated with a wavelength shifter such as tetraphenyl butadiene (TPB). The active area of the SiPMs is $3\times 3$ $\textrm{mm}^2$, thus each instrumented face has 64 sensors covering the whole area at a pitch of 3 mm. The uninstrumented faces reflect optical photons according to a lambertian distribution with an efficiency of 97 \%. Rayleigh scattering is simulated, with an interaction length of 36 cm. In Table \ref{thetable} the Monte Carlo set-up specification as well as the values of the relevant parameters used are summarized.
 
 \begin{table*}[h!]\centering
@@ -434,10 +434,10 @@ $, which gives $\delta \Delta t = 26.3$~ps FWHM for a DOI resolution $\Delta z =
 	\caption{\label{fig.vLXe} Distribution of the velocity of scintillation photons propagating in LXe, given the refraction index shown in figure \ref{fig.nlambda} and the emission spectrum shown in figure \ref{fig.spectrumLXe} and considering the group velocity described in Eq.~\eqref{eq.velocity}.}
 \end{figure}
 
-The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda}.  The velocity of propagation of VUV photons in the Geant-4 simulation is the group velocity $v_g$, rather than the phase velocity, and it depends on the refraction index, which, in turn, depends on the energy of the photon, according to the following relationship:
+The refraction index in LXe varies significantly with the scintillation photon wavelength, as shown in figure  \ref{fig.nlambda}.  The velocity of propagation of VUV photons in the Geant4 simulation is the group velocity $v_g$, rather than the phase velocity, and it depends on the refraction index, which, in turn, depends on the energy of the photon, according to the following relationship:
 %
 \begin{equation}
-v_g = c\times \left(n(E)+\frac{dn}{d(log(E))}\right)^{-1}
+v_g = c\times \left(n(E)+\frac{\textrm{d}n}{\textrm{d}(\textrm{log}(E))}\right)^{-1}
 \label{eq.velocity}
 \end{equation}
 %
@@ -523,8 +523,9 @@ CRT of 70 ps.
 
 \begin{figure}[!bhtp]
 	\centering
-	\includegraphics[scale=0.4]{img/tpb_avg_npe_phys.png}
-	\caption{\label{fig.crtTPBavg} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for conventional SiPMs coated with TPB assuming a 50$\%$ PDE. The blue line is computed for a TPB decay time of 2.2 ns, while the green dotted line is for 3.0 ns.}
+%	\includegraphics[scale=0.4]{img/tpb_avg_npe_phys.png}
+	\includegraphics[scale=0.4]{img/final_plot.png}	
+	\caption{\label{fig.crtTPBavg} CRT as a function of the number of photoelectrons used to compute $\Delta t$, for conventional SiPMs coated with TPB assuming a 50$\%$ PDE. The blue line is computed for a TPB decay time of 2.2 ns, while the green dotted line is for 3.0 ns. We also show the VUV-sensitive SiPM case for comparison.} 
 \end{figure}
 
 %\begin{figure}[!bhtp]
