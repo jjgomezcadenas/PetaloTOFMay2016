@@ -1,0 +1,27 @@
+Dear editor,
+
+We have addressed the remaining comments ad suggestions as explained in the following:
+
+Referee 1
+- Liquid xenon circulates through external getters, which reduce the impurities (in particular water) to a negligible level for light propagation. This why we consider that Rayleigh scattering is the only relevant source of attenuation of light.
+- corrected as suggested.
+- corrected as suggested.
+- corrected as suggested.
+- corrected as suggested.
+- corrected as suggested.
+- The referee is right, LOR should be the centre of the geometrical system. We have corrected it through all the text and in the figure.
+- We have corrected to geant4.10.1.p01
+- corrected as suggested.
+- The referee is right, this is a typo. We have corrected 11.2 ps to 26.3 ps (which is the FWHM). Figure 7 is correct: it shows a sigma of about 11 ps, which translates to ~ 26 ps FWHM. We have changed it also in the following paragraph (" ... The CRT for PDE=1 is ~ 11 ps...")
+- Yes, we fluctuated the spatial resolution with a 2 mm sigma, which means 4.7 mm FWHM.
+- corrected as suggested.
+- corrected as suggested.
+- corrected as suggested.
+- We have added the curve for VUV, as suggested.
+
+Editor
+We have corrected the inconsistency between FWHM and sigma pointed out.
+We have also rephrased the last sentence of section 3.1 adding the word "average".
+Indeed the centre fo the LOR is the centre of the geometrical setup, and we have corrected it all over the text.
+We have redonde the plots with clearer legends.
+We have corrected Ref. 5 as suggested. Ref 12 is actually spelled as "SPM"in the document ( see http://www.sensl.com/downloads/ds/TN%20-%20Intro%20to%20SPM%20Tech.pdf). We have also corrected Ref 34, thanking for pointing it out (we got confused with Chinese name and surname)!
